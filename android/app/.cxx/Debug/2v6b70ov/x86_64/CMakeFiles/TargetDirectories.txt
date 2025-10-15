@@ -1,0 +1,2 @@
+/Users/keanhontan/Development/SmartToDoApp/android/app/.cxx/Debug/2v6b70ov/x86_64/CMakeFiles/edit_cache.dir
+/Users/keanhontan/Development/SmartToDoApp/android/app/.cxx/Debug/2v6b70ov/x86_64/CMakeFiles/rebuild_cache.dir

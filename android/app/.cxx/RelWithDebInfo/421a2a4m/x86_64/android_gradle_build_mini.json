@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/keanhontan/Development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/keanhontan/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/keanhontan/Development/SmartToDoApp/android/app/.cxx/RelWithDebInfo/421a2a4m/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/keanhontan/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/keanhontan/Development/SmartToDoApp/android/app/.cxx/RelWithDebInfo/421a2a4m/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
