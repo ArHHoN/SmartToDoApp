@@ -15,52 +15,51 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> signInUser(String email, String password) async {
     final supabase = Supabase.instance.client;
 
-  try {
-    final response = await supabase.auth.signInWithPassword(email: email, password: password);
-    var user = supabase.auth.currentUser;
-    if(user != null){
+    try {
+      final response = await supabase.auth
+          .signInWithPassword(email: email, password: password);
+      var user = supabase.auth.currentUser;
+      if (user != null) {
         final response = await Supabase.instance.client
-        .from('users')
-        .select('role')
-        .eq('id', user.id)
-        .single();
+            .from('users')
+            .select('role')
+            .eq('id', user.id)
+            .single();
 
         final role = response['role'];
         final session = AppSession();
         session.role = role;
-        session.userId = user?.id; 
+        session.userId = user?.id;
       }
       Fluttertoast.showToast(msg: 'Login successful!');
 
-    print("User signed in: ${response.user?.id}");
-  } catch (e) {
-     Fluttertoast.showToast(
-    msg: "$e",
-    toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.BOTTOM,
-    timeInSecForIosWeb: 1,
-    backgroundColor: Colors.black,
-    textColor: Colors.white,
-    fontSize: 16.0,
-  );
-    print("Sign in error: $e");
-  }
+      print("User signed in: ${response.user?.id}");
+    } catch (e) {
+      Fluttertoast.showToast(
+        msg: "$e",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.black,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
+      print("Sign in error: $e");
+    }
 
-  final user = Supabase.instance.client.auth.currentUser;
-if (user == null) {
-  print("User not authenticated!");
-} else {
-  Navigator.pushReplacement(
+    final user = Supabase.instance.client.auth.currentUser;
+    if (user == null) {
+      print("User not authenticated!");
+    } else {
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
       );
-  print("User authenticated: ${user.id}");
-
-}
-}
+      print("User authenticated: ${user.id}");
+    }
+  }
 
   void _handleLogin() {
-
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
     if (email.isEmpty || password.isEmpty) {
@@ -70,7 +69,6 @@ if (user == null) {
       return;
     }
     signInUser(email, password);
-
   }
 
   @override
@@ -83,7 +81,7 @@ if (user == null) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             Text(
+              Text(
                 "Cindy's Bargain",
                 style: TextStyle(
                   fontSize: 28,

@@ -52,19 +52,26 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(keyProperties['storeFile'])
-            storePassword keyProperties['storePassword']
-            keyAlias keyProperties['keyAlias']
-            keyPassword keyProperties['keyPassword']
+            if (keyPropertiesFile.exists()) {
+                storeFile file(keyProperties['storeFile'])
+                storePassword keyProperties['storePassword']
+                keyAlias keyProperties['keyAlias']
+                keyPassword keyProperties['keyPassword']
+            }
         }
     }
+
     buildTypes {
         release {
-        signingConfig signingConfigs.release
-        shrinkResources false
-        minifyEnabled false
-        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-    }
+            if (keyPropertiesFile.exists()) {
+                signingConfig signingConfigs.release
+            } else {
+                println("Warning: keyPropertiesFile not found. Release APK will NOT be signed.")
+            }
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
