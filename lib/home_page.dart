@@ -9,8 +9,7 @@ class HomePage extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-
-    class _HomeScreenState extends State<HomePage> {
+class _HomeScreenState extends State<HomePage> {
   int _selectedIndex = 0;
   AppSession session = AppSession();
 
@@ -18,7 +17,6 @@ class HomePage extends StatefulWidget {
     return [
       IndexPage(),
       ToDoAppPage(),
-
     ];
   }
 
@@ -28,7 +26,7 @@ class HomePage extends StatefulWidget {
         icon: Icon(Icons.list),
         label: "Index",
       ),
-        const BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(Icons.sunny),
         label: "ToDoApp",
       ),

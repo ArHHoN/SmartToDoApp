@@ -18,11 +18,11 @@ tasks.register("clean", Delete) {
 }
 
 buildscript {
-    ext.kotlin_version = '1.9.22'
+    ext.kotlin_version = '2.1.0'
     ext {
-        compileSdkVersion = 35
+        compileSdkVersion = 36
         minSdkVersion = 29
-        targetSdkVersion = 35
+        targetSdkVersion = 36
     }
     
 
@@ -32,7 +32,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.1'
+        classpath 'com.android.tools.build:gradle:8.6.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
