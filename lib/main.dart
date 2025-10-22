@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
 import 'home_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
