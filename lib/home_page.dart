@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smart_todoapp/index_page.dart';
-import 'package:smart_todoapp/login_page.dart';
 import 'package:smart_todoapp/services/app_session.dart';
 import 'package:smart_todoapp/to_do_app_page.dart';
 
@@ -50,7 +49,7 @@ class _HomeScreenState extends State<HomePage> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         backgroundColor: Colors.white,
-        selectedItemColor: Colors.blueAccent,
+        selectedItemColor: Colors.orangeAccent,
         unselectedItemColor: Colors.grey,
         items: navItems,
       ),
